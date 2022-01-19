@@ -6,6 +6,8 @@ import sti.abstractions.domain.Squirrel;
 
 public class ForestServiceImpl implements ForestService{
 
+    public ForestServiceImpl(){}
+
     public Owl createOwl(int wingSpan){
         Owl owl = new Owl(wingSpan);
         return owl;
