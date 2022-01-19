@@ -20,11 +20,21 @@
             <groupId>se.sti</groupId>
             <artifactId>sti-abstractions-domain</artifactId>
         </dependency>
+        <dependency>
+            <groupId>se.sti</groupId>
+            <artifactId>sti-abstractions-service-impl</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
     </dependencies>
 </project>
