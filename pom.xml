@@ -26,6 +26,8 @@
 
         <!-- versions -->
         <junit.version>4.13.1</junit.version>
+        <mysql.version>8.0.28</mysql.version>
+        <project.version>1.0-SNAPSHOT</project.version>
         <spring.version>5.3.13</spring.version>
     </properties>
 
@@ -33,6 +35,7 @@
         <module>sti-abstractions-dao</module>
         <module>sti-abstractions-dao-impl</module>
         <module>sti-abstractions-domain</module>
+        <module>sti-abstractions-entity</module>
         <module>sti-abstractions-service</module>
         <module>sti-abstractions-service-impl</module>
         <module>sti-abstractions-test</module>
@@ -45,29 +48,29 @@
             <dependency>
                 <groupId>se.sti</groupId>
                 <artifactId>sti-abstractions-dao</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
           <dependency>
             <groupId>se.sti</groupId>
             <artifactId>sti-abstractions-dao-impl</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
             <dependency>
                 <groupId>se.sti</groupId>
                 <artifactId>sti-abstractions-domain</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>se.sti</groupId>
                 <artifactId>sti-abstractions-service</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>se.sti</groupId>
                 <artifactId>sti-abstractions-service-impl</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
@@ -75,6 +78,12 @@
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
 
             <!-- spring -->

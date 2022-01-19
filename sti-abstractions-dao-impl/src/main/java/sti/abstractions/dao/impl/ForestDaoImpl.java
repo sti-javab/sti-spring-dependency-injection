@@ -6,8 +6,19 @@ import sti.abstractions.domain.PineTree;
 import sti.abstractions.domain.Squirrel;
 
 import java.sql.*;
+import java.util.Properties;
 
 public class ForestDaoImpl implements ForestDao {
+
+    Connection conn = null;
+    Statement stat = null;
+    ResultSet rs = null;
+
+    @Override
+    public Connection getConnection() throws SQLException{
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/sti", "root", "root");
+    }
+
 
     @Override
     public Squirrel createSquirrel(int age, String name, int numOfEatenCones, boolean hungry) {
