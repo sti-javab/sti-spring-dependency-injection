@@ -19,10 +19,16 @@ public class ForestDaoImpl implements ForestDao {
         return DriverManager.getConnection("jdbc:mysql://localhost:3306/sti", "root", "root");
     }
 
-
     @Override
-    public Squirrel createSquirrel(int age, String name, int numOfEatenCones, boolean hungry) {
-        return null;
+    public Squirrel createSquirrel(int age, String name, int numOfEatenCones, boolean hungry)  {
+        try{
+            conn = getConnection();
+            stat =conn.prepareStatement("INSERT INTO squirrel ( age, name, numOfeatencones, hungry) VALUES(3, 'Piff', 10, false)");
+            rs =stat.executeQuery("INSERT INTO squirrel ( age, name, numOfeatencones, hungry) VALUES(3, 'Piff', 10, false)");
+        }catch (SQLException e){
+            System.out.println(e);
+        }
+        return new Squirrel(age, name);
     }
 
     @Override
