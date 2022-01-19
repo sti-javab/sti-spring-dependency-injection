@@ -13,4 +13,16 @@
     <artifactId>sti-abstractions-dao-impl</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>se.sti</groupId>
+            <artifactId>sti-abstractions-domain</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>se.sti</groupId>
+            <artifactId>sti-abstractions-dao</artifactId>
+        </dependency>
+    </dependencies>
 </project>

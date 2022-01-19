@@ -1,12 +1,21 @@
 package sti.abstractions.service;
 
+import sti.abstractions.dao.ForestDao;
+import sti.abstractions.dao.impl.ForestDaoImpl;
 import sti.abstractions.domain.Owl;
 import sti.abstractions.domain.PineTree;
 import sti.abstractions.domain.Squirrel;
 
+import java.util.Objects;
+
 public class ForestServiceImpl implements ForestService{
 
-    public ForestServiceImpl(){}
+    private ForestDao forestDao;
+
+    public ForestServiceImpl(ForestDaoImpl forestDao){
+        //Javas egen metod för null check
+        this.forestDao = Objects.requireNonNull(forestDao);
+    }
 
     public Owl createOwl(int wingSpan){
         Owl owl = new Owl(wingSpan);
@@ -20,7 +29,12 @@ public class ForestServiceImpl implements ForestService{
 
     @Override
     public PineTree createPineTree(int numOfPineCones) {
-        return null;
+        return new PineTree(numOfPineCones);
+    }
+
+    @Override
+    public PineTree createPineTree(int numOfPineCones, int numOfSquirrels, Owl owl) {
+        return new PineTree(numOfPineCones, numOfSquirrels, owl);
     }
 
     public Boolean killOwl(Owl owl){return null;}

@@ -12,5 +12,7 @@ public interface ForestService {
 
     PineTree createPineTree(int numOfPineCones);
 
+    PineTree createPineTree(int numOfPineCones, int numOfSquirrels, Owl owl);
+
     Boolean killOwl(Owl owl);
 }
