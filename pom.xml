@@ -29,8 +29,9 @@
         <spring.version>5.3.13</spring.version>
     </properties>
 
-
     <modules>
+        <module>sti-abstractions-dao</module>
+        <module>sti-abstractions-dao-impl</module>
         <module>sti-abstractions-domain</module>
         <module>sti-abstractions-service</module>
         <module>sti-abstractions-service-impl</module>
@@ -41,6 +42,7 @@
         <dependencies>
 
             <!-- project -->
+
             <dependency>
                 <groupId>se.sti</groupId>
                 <artifactId>sti-abstractions-domain</artifactId>
