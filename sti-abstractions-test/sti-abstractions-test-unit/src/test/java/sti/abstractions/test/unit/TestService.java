@@ -10,7 +10,8 @@ import sti.abstractions.service.ForestService;
 
 public class TestService {
 
-    private final ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:sti-abstractions-service.xml");
+    private final ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+            "classpath:sti-abstractions-service.xml", "classpath:sti-abstractions-dao.xml");
 
     private ForestService forestService;
 
