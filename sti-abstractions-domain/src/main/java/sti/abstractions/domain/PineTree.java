@@ -38,6 +38,30 @@ public class PineTree extends Tree {
 
     }
 
+    public List<PineCone> getPineCones() {
+        return pineCones;
+    }
+
+    public void setPineCones(List<PineCone> pineCones) {
+        this.pineCones = pineCones;
+    }
+
+    public List<Squirrel> getSquirrels() {
+        return squirrels;
+    }
+
+    public void setSquirrels(List<Squirrel> squirrels) {
+        this.squirrels = squirrels;
+    }
+
+    public Owl getOwl() {
+        return owl;
+    }
+
+    public void setOwl(Owl owl) {
+        this.owl = owl;
+    }
+
     static class PineCone {
 
         int calories;
