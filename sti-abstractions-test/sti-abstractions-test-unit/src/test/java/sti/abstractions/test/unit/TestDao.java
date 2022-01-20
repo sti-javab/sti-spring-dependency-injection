@@ -38,4 +38,9 @@ public class TestDao {
         }
         Assert.assertNotNull(connection);
     }
+
+    @Test
+    public void testCreateSquirrel(){
+        forestDao.createSquirrel(3, "Piff", 10, false);
+    }
 }

@@ -8,13 +8,17 @@ public class Squirrel extends Animal{
 
     private int numOfEatenCones = 0;
 
-    private boolean hungry;
-
-    public Squirrel(){}
-
-    public Squirrel(int age, String name){
+    public Squirrel(int age, String name, boolean hungry){
+        super(hungry);
         this.age = age;
         this.name = name;
+    }
+
+    public Squirrel(int age, String name, int numOfEatenCones, boolean hungry) {
+        super(hungry);
+        this.age = age;
+        this.name = name;
+        this.numOfEatenCones = numOfEatenCones;
     }
 
     @Override

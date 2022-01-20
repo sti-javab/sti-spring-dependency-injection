@@ -6,13 +6,13 @@ import sti.abstractions.domain.PineTree;
 import sti.abstractions.domain.Squirrel;
 
 import java.sql.*;
-import java.util.Properties;
 
 public class ForestDaoImpl implements ForestDao {
 
     Connection conn = null;
     Statement stat = null;
     ResultSet rs = null;
+    int result = 0;
 
     @Override
     public Connection getConnection() throws SQLException{
@@ -21,14 +21,15 @@ public class ForestDaoImpl implements ForestDao {
 
     @Override
     public Squirrel createSquirrel(int age, String name, int numOfEatenCones, boolean hungry)  {
+
         try{
             conn = getConnection();
             stat =conn.prepareStatement("INSERT INTO squirrel ( age, name, numOfeatencones, hungry) VALUES(3, 'Piff', 10, false)");
-            rs =stat.executeQuery("INSERT INTO squirrel ( age, name, numOfeatencones, hungry) VALUES(3, 'Piff', 10, false)");
+            result = stat.executeUpdate("INSERT INTO squirrel ( age, name, numOfeatencones, hungry) VALUES(3, 'Piff', 10, false)");
         }catch (SQLException e){
             System.out.println(e);
         }
-        return new Squirrel(age, name);
+        return new Squirrel(age, name, numOfEatenCones, hungry);
     }
 
     @Override

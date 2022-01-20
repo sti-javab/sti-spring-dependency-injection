@@ -9,7 +9,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Owl oliver = new Owl(-10);
         System.out.println("olivers wingSpan: "+ oliver.getWingSpan());
-        Squirrel squiggie = new Squirrel();
+        Squirrel squiggie = new Squirrel(3, "Puff", 5, false);
         //PineTree pine = new PineTree(12);
         PineTree pine = null; //will result in NullPointerException
 

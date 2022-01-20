@@ -10,6 +10,13 @@ public abstract class Animal {
 
     protected Date dateOfBirth;
 
+    public Animal(){}
+
+    public Animal(boolean hungry) {
+        this.hungry = hungry;
+    }
+
+
     public double getWeight() {
         return weight;
     }
