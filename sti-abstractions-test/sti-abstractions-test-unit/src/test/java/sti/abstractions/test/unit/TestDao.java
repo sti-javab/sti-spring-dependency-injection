@@ -41,6 +41,6 @@ public class TestDao {
 
     @Test
     public void testCreateSquirrel(){
-        forestDao.createSquirrel(3, "Piff", 10, false);
+        forestDao.createSquirrel(3, "Piff");
     }
 }

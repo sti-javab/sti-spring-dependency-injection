@@ -33,6 +33,18 @@ public class ForestDaoImpl implements ForestDao {
     }
 
     @Override
+    public Squirrel createSquirrel(int age, String name) {
+        try{
+            conn = getConnection();
+            stat =conn.prepareStatement("INSERT INTO squirrel ( age, name) VALUES(3, 'Piff')");
+            result = stat.executeUpdate("INSERT INTO squirrel ( age, name) VALUES(3, 'Piff')");
+        }catch (SQLException e){
+            System.out.println(e);
+        }
+        return new Squirrel(age, name);
+    }
+
+    @Override
     public PineTree createPineTree(int numOfPineCones, int numOfSquirrels, Owl owl) {
         return null;
     }

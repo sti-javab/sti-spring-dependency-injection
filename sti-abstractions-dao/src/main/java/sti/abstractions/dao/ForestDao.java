@@ -10,6 +10,7 @@ import java.sql.SQLException;
 public interface ForestDao {
 
     Squirrel createSquirrel(int age, String name, int numOfEatenCones, boolean hungry);
+    Squirrel createSquirrel(int age, String name);
     PineTree createPineTree(int numOfPineCones, int numOfSquirrels, Owl owl);
 
     Connection getConnection() throws SQLException;

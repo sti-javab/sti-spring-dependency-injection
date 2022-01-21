@@ -21,6 +21,11 @@ public class Squirrel extends Animal{
         this.numOfEatenCones = numOfEatenCones;
     }
 
+    public Squirrel(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
     @Override
     boolean eat(Object cone) {
         if(cone instanceof PineTree.PineCone){
