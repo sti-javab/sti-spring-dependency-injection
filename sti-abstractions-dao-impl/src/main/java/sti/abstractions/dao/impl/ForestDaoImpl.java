@@ -10,7 +10,7 @@ import java.sql.*;
 public class ForestDaoImpl implements ForestDao {
 
     Connection conn = null;
-    Statement stat = null;
+    PreparedStatement preparedStatement = null;
     ResultSet rs = null;
     int result = 0;
 
@@ -24,8 +24,12 @@ public class ForestDaoImpl implements ForestDao {
 
         try{
             conn = getConnection();
-            stat =conn.prepareStatement("INSERT INTO squirrel ( age, name, numOfeatencones, hungry) VALUES(3, 'Piff', 10, false)");
-            result = stat.executeUpdate("INSERT INTO squirrel ( age, name, numOfeatencones, hungry) VALUES(3, 'Piff', 10, false)");
+            preparedStatement =conn.prepareStatement("INSERT INTO squirrel ( age, name) VALUES(default , ?, ?)");
+
+            preparedStatement.setInt(1, age);
+            preparedStatement.setString(2, name);
+
+            result = preparedStatement.executeUpdate();
         }catch (SQLException e){
             System.out.println(e);
         }
@@ -36,8 +40,12 @@ public class ForestDaoImpl implements ForestDao {
     public Squirrel createSquirrel(int age, String name) {
         try{
             conn = getConnection();
-            stat =conn.prepareStatement("INSERT INTO squirrel ( age, name) VALUES(3, 'Piff')");
-            result = stat.executeUpdate("INSERT INTO squirrel ( age, name) VALUES(3, 'Piff')");
+            preparedStatement =conn.prepareStatement("INSERT INTO squirrel ( age, name) VALUES( ?, ?)");
+
+            preparedStatement.setInt(1, age);
+            preparedStatement.setString(2, name);
+
+            result = preparedStatement.executeUpdate();
         }catch (SQLException e){
             System.out.println(e);
         }
